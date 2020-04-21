@@ -1,7 +1,5 @@
 package com.example.exercise2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -10,11 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class BuatKontakActivity extends AppCompatActivity {
     protected Cursor cursor;
     DBHelper dbHelper;
     Button  butsimpan;
-    EditText innama, innomor, inemail, inalamat;
+    EditText text1, innama, innomor, inemail, inalamat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class BuatKontakActivity extends AppCompatActivity {
         setContentView(R.layout.activity_buat_kontak);
 
         dbHelper = new DBHelper(this);
-
+        text1 = (EditText) findViewById(R.id.text1);
         innama = (EditText) findViewById(R.id.innama);
         innomor = (EditText) findViewById(R.id.innomor);
         inemail = (EditText) findViewById(R.id.inemail);
@@ -33,7 +33,8 @@ public class BuatKontakActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                db.execSQL("insert into kontak(nama, nomor, email, alamat) values('" +
+                db.execSQL("insert into kontak(no, nama, nomor, email, alamat) values('" +
+                        text1.getText().toString()  + "','" +
                         innama.getText().toString()  + "','" +
                         innomor.getText().toString() + "','" +
                         inemail.getText().toString() + "','" +

@@ -1,15 +1,11 @@
 package com.example.exercise2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LihatKontakActivity extends AppCompatActivity {
     protected Cursor cursor;
@@ -27,17 +23,17 @@ public class LihatKontakActivity extends AppCompatActivity {
         email = (TextView) findViewById(R.id.email);
         alamat = (TextView) findViewById(R.id.alamat);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM kontak WHERE nama = '"+
+        cursor = db.rawQuery("SELECT * FROM kontak WHERE nama = '" +
                 getIntent().getStringExtra("nama") + "'",null);
         cursor.moveToFirst();
-        if (cursor.getCount()>0);
+        if (cursor.getCount()>0)
         {
             cursor.moveToPosition(0);
 
             nama.setText(cursor.getString(0).toString());
-            nomor.setText(cursor.getString(2).toString());
-            email.setText(cursor.getString(3).toString());
-            alamat.setText(cursor.getString(4).toString());
+            nomor.setText(cursor.getString(1).toString());
+            email.setText(cursor.getString(2).toString());
+            alamat.setText(cursor.getString(3).toString());
         }
     }
 }

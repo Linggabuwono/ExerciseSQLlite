@@ -5,20 +5,17 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     String[] daftar;
@@ -45,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ma = this;
-        dbcenter =  new DBHelper(this);
+        dbcenter = new DBHelper(this);
         RefreshList();
 
 
@@ -65,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
         ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
                 final String selection = daftar[arg2]; //getItemPositon(arg2).toString();
-                final CharSequence[] dialogitem = {"Lihat Kontak","Edit Kontak","Hapus Kontak"};
+                final CharSequence[] dialogitem = {"Lihat Kontak", "Edit Kontak","Hapus Kontak"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Pilihan");
-                builder.setItems(dialogitem, new DialogInterface.OnClickListener(){
+                builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
                     public  void onClick(DialogInterface dialog, int item) {
                         switch (item) {
                             case 0:
