@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected Cursor cursor;
     DBHelper dbcenter;
     public static MainActivity ma;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             cursor.moveToPosition(cc);
             daftar[cc] = cursor.getString(1).toString();
         }
-        ListView01 = (ListView) findViewById(R.id.listView1);
+        ListView01 = (ListView) findViewById(R.id.listView01);
         ListView01.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
         ListView01.setSelected(true);
         ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {

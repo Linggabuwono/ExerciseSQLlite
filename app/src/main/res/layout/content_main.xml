@@ -16,11 +16,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
-        android:text="Daftar Kontak"/>
+        android:text="Daftar Kontak"
+        tools:ignore="MissingConstraints" />
 
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listView01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
