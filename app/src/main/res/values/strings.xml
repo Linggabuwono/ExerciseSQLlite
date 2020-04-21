@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Exercise2</string>
+    <string name="label1">Daftar Kontak</string>
+    <string name="label2">Tambah Data</string>
+    <string name="nama">Nama</string>
+    <string name="inmana">Masukkan Nama</string>
+    <string name="nomor">Nomor Telephon</string>
+    <string name="innomor">Masukan Nomor Telephon</string>
+    <string name="email">Email</string>
+    <string name="inemail">Masukan Email</string>
+    <string name="alamat">Alamat</string>
+    <string name="inalamat">Masukan Alamat</string>
+    <string name="udata">Ubah Data</string>
+    <string name="hdata">Hapus Data</string>
+    <string name="batal">Batal</string>
+    <string name="simpan">Simpan</string>
+    <string name="action_settings">Settings</string>
+</resources>
